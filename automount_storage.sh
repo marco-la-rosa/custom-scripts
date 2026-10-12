@@ -1,9 +1,7 @@
 #!/bin/bash
 
-set -a
-source .env
-set +a
-
+SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
+set -a; source "$SCRIPT_DIR/.env"; set +a
 
 exec >> /tmp/automount.log 2>&1
 echo "=============================="

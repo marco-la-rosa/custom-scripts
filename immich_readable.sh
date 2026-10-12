@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # uploading variables
-set -a
-source .env
-set +a
+SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
+set -a; source "$SCRIPT_DIR/.env"; set +a
 
 # if directory doesn't exist yet
 mkdir -p "$EXPORT_DIR"
